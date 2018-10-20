@@ -13,8 +13,8 @@ Enum Consulta As Byte
 End Enum
 
 Structure Servicio
-    Public elementoID As Byte
-    Public consultaID As Byte
+    Public elementoID As Elemento
+    Public consultaID As Consulta
     Public persona As String
     Public telefono As String
     Public fecha As String
