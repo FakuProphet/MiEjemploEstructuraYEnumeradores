@@ -7,6 +7,7 @@
         cargarCombo()
     End Sub
 
+    'Metodo cargar comboBox con los elementos de la clase
     Private Sub cargarCombo()
         cboConsultas.Items.Add(Consulta.compra)
         cboConsultas.Items.Add(Consulta.venta)

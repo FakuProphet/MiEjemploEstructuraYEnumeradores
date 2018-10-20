@@ -129,7 +129,6 @@ Public Class Form1
             habilitarBotonConcultar()
         End If
 
-
     End Sub
 
     Private Sub rbtMotocicleta_CheckedChanged(sender As Object, e As EventArgs) Handles rbtMotocicleta.CheckedChanged
@@ -148,6 +147,7 @@ Public Class Form1
         setConsulta(Consulta.compra)
     End Sub
 
+    'contador 
     Private Function CantidadOperaciones()
         Dim salida(1) As Integer
         For Each item As Servicio In miVector
@@ -158,7 +158,6 @@ Public Class Form1
                 salida(1) = salida(1) + 1
             End If
         Next
-
         Return salida
     End Function
 
