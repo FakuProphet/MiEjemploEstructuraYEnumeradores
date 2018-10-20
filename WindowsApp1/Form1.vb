@@ -12,6 +12,7 @@ Enum Consulta As Byte
     compra = 2
 End Enum
 
+
 Structure Servicio
     Public elementoID As Elemento
     Public consultaID As Consulta
@@ -23,6 +24,7 @@ End Structure
 
 
 Public Class Form1
+
 
     Private elementoSeleccionado As Elemento
     Private consultaSeleccionada As Consulta
@@ -94,6 +96,10 @@ Public Class Form1
 
     Private contador As Integer
     Private Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
+
+        'a modo de prueba, mostramos en las labels, los valores que se estan guardando
+        'ejemplo consultaSeleccionada.ToString nos devuelve la cadena que haya sido seleccionada(auto,moto)
+        'sin ToString, nos devuelve el valor numerico asignado.
         lblOperacion.Text = consultaSeleccionada
         lblVehiculo.Text = elementoSeleccionado
 
@@ -103,6 +109,9 @@ Public Class Form1
         If validar() Then
             If contador <= 4 Then
 
+                'COMO SE SOLICITA GUARDAR LA ID O VALOR NUMERICO 
+                'EN EL ENUMERADOR, GUARDAMOS EN LA ESTRUCTURA miServicio, EN LOS MIEMBROS
+                'consultaID y elementoID EL VALOR ASIGNADO
 
                 miServicio.consultaID = consultaSeleccionada
                 miServicio.elementoID = elementoSeleccionado
@@ -113,14 +122,6 @@ Public Class Form1
 
 
                 cargarVector(miServicio, contador)
-
-                'solo para emitir un mensaje con los datos del vector q no sean nulos.
-                'For Each item As Servicio In miVector
-                '    If Not String.IsNullOrEmpty(item.persona) Then
-                '        MessageBox.Show(item.persona)
-                '    End If
-                'Next
-
 
             Else
                 MessageBox.Show("El vector se completo.")
