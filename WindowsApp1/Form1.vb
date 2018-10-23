@@ -1,7 +1,7 @@
 ﻿
 
 
-
+'compra y venta vehiculos
 Public Enum Elemento As Byte
     auto = 1
     moto = 2
@@ -29,7 +29,7 @@ Public Class Form1
     Private elementoSeleccionado As Elemento
     Private consultaSeleccionada As Consulta
     Dim miVector(4) As Servicio
-    Dim posicion As Integer
+    '   Dim posicion As Integer
     Dim bandera As Boolean = False
 
 
@@ -55,6 +55,9 @@ Public Class Form1
                 consultaSeleccionada = Consulta.venta
         End Select
     End Sub
+
+
+
 
     Private Sub fechaYHora()
         txtFechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy")
@@ -85,7 +88,7 @@ Public Class Form1
     End Function
 
     Private Sub habilitarBotonConcultar()
-        If contador > 0 Then
+        If contador >= 0 Then
             btnConsultar.Enabled = True
         Else
             btnConsultar.Enabled = False
@@ -93,7 +96,7 @@ Public Class Form1
     End Sub
 
 
-
+    'inicializar en uno o cero es igual
     Private contador As Integer
     Private Sub btnConfirmar_Click(sender As Object, e As EventArgs) Handles btnConfirmar.Click
 
@@ -102,7 +105,9 @@ Public Class Form1
         'sin ToString, nos devuelve el valor numerico asignado.
         lblOperacion.Text = consultaSeleccionada
         lblVehiculo.Text = elementoSeleccionado
+        lblContador.Text = contador
 
+        'declaras una variable u objeto del tipo servicio
         Dim miServicio As Servicio
 
 
@@ -177,6 +182,10 @@ Public Class Form1
                 ListBox1.Items.Add(item.persona.ToUpper)
             End If
         Next
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+        lblContador.Text = "Hola mundo..."
     End Sub
 End Class
 

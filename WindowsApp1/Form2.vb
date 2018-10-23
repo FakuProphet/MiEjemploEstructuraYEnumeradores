@@ -1,13 +1,13 @@
 ﻿Public Class Form2
 
-    Public miNuevoVector(4) As Integer
+    Public miNuevoVector(1) As Integer
 
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarCombo()
     End Sub
 
-    'Metodo cargar comboBox con los elementos de la clase
+    'Metodo cargar comboBox con los elementos de la clase o 
     Private Sub cargarCombo()
         cboConsultas.Items.Add(Consulta.compra)
         cboConsultas.Items.Add(Consulta.venta)
