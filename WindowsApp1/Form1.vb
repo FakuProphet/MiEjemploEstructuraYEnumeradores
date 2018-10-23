@@ -14,8 +14,8 @@ End Enum
 
 
 Structure Servicio
-    Public elementoID As Elemento
-    Public consultaID As Consulta
+    Public elementoID As Byte 'guardo el valor numerico del id
+    Public consultaID As Byte
     Public persona As String
     Public telefono As String
     Public fecha As String
@@ -174,7 +174,7 @@ Public Class Form1
 
         For Each item As Servicio In miVector
             If item.persona IsNot Nothing Then
-                ListBox1.Items.Add(item.persona)
+                ListBox1.Items.Add(item.persona.ToUpper)
             End If
         Next
     End Sub
