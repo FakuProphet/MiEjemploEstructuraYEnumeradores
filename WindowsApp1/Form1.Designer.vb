@@ -40,6 +40,8 @@ Partial Class Form1
         Me.txtHora = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnConsultar = New System.Windows.Forms.Button()
+        Me.btnListado = New System.Windows.Forms.Button()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -215,11 +217,30 @@ Partial Class Form1
         Me.btnConsultar.Text = "&Formulario Consultar"
         Me.btnConsultar.UseVisualStyleBackColor = True
         '
+        'btnListado
+        '
+        Me.btnListado.Location = New System.Drawing.Point(201, 297)
+        Me.btnListado.Name = "btnListado"
+        Me.btnListado.Size = New System.Drawing.Size(142, 23)
+        Me.btnListado.TabIndex = 20
+        Me.btnListado.Text = "&Listado"
+        Me.btnListado.UseVisualStyleBackColor = True
+        '
+        'ListBox1
+        '
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.Location = New System.Drawing.Point(523, 70)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(209, 186)
+        Me.ListBox1.TabIndex = 21
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(559, 355)
+        Me.ClientSize = New System.Drawing.Size(744, 355)
+        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.btnListado)
         Me.Controls.Add(Me.btnConsultar)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.txtHora)
@@ -264,4 +285,6 @@ Partial Class Form1
     Friend WithEvents txtHora As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents btnConsultar As Button
+    Friend WithEvents btnListado As Button
+    Friend WithEvents ListBox1 As ListBox
 End Class

@@ -168,6 +168,16 @@ Public Class Form1
         instancia.miNuevoVector = CantidadOperaciones()
         instancia.ShowDialog()
     End Sub
+
+    Private Sub btnListado_Click(sender As Object, e As EventArgs) Handles btnListado.Click
+        ListBox1.Items.Clear()
+
+        For Each item As Servicio In miVector
+            If item.persona IsNot Nothing Then
+                ListBox1.Items.Add(item.persona)
+            End If
+        Next
+    End Sub
 End Class
 
 
