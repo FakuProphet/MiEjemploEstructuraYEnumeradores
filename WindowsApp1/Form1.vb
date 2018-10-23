@@ -1,5 +1,5 @@
 ﻿
-
+'Ejemplo de chino
 
 'compra y venta vehiculos
 Public Enum Elemento As Byte
