@@ -28,6 +28,7 @@ Public Class Form1
 
     Private elementoSeleccionado As Elemento
     Private consultaSeleccionada As Consulta
+    Public _Archivo
     Dim miVector(4) As Servicio
     '   Dim posicion As Integer
     Dim bandera As Boolean = False
@@ -35,6 +36,7 @@ Public Class Form1
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         fechaYHora()
+        CrearArchivo()
     End Sub
 
 
@@ -56,7 +58,21 @@ Public Class Form1
         End Select
     End Sub
 
+    Public Sub CrearArchivo()
+        Dim NUMERO As Integer = 0
+        _Archivo = "Rodado.txt"
+        NUMERO = FreeFile()
+        FileOpen(NUMERO, _Archivo, OpenMode.Append)
+        FileClose(NUMERO)
+    End Sub
 
+    Private Sub Grabar(ByVal servicio As Servicio)
+        Dim NUMERO As Integer = 0
+        NUMERO = FreeFile()
+        FileOpen(NUMERO, _Archivo, OpenMode.Append)
+        WriteLine(NUMERO, servicio.consultaID, servicio.elementoID, servicio.persona, servicio.fecha, servicio.hora, servicio.telefono)
+        FileClose(NUMERO)
+    End Sub
 
 
     Private Sub fechaYHora()
@@ -127,7 +143,7 @@ Public Class Form1
 
 
                 cargarVector(miServicio, contador)
-
+                Grabar(miServicio)
             Else
                 MessageBox.Show("El vector se completo.")
             End If
