@@ -31,7 +31,7 @@ Partial Class Form1
         Me.rbtVenta = New System.Windows.Forms.RadioButton()
         Me.txtClienteNombre = New System.Windows.Forms.TextBox()
         Me.txtTeleContacto = New System.Windows.Forms.TextBox()
-        Me.txtFechaHora = New System.Windows.Forms.TextBox()
+        Me.txtFecha = New System.Windows.Forms.TextBox()
         Me.btnConfirmar = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
@@ -135,13 +135,13 @@ Partial Class Form1
         Me.txtTeleContacto.Size = New System.Drawing.Size(347, 20)
         Me.txtTeleContacto.TabIndex = 10
         '
-        'txtFechaHora
+        'txtFecha
         '
-        Me.txtFechaHora.Enabled = False
-        Me.txtFechaHora.Location = New System.Drawing.Point(157, 207)
-        Me.txtFechaHora.Name = "txtFechaHora"
-        Me.txtFechaHora.Size = New System.Drawing.Size(133, 20)
-        Me.txtFechaHora.TabIndex = 11
+        Me.txtFecha.Enabled = False
+        Me.txtFecha.Location = New System.Drawing.Point(157, 207)
+        Me.txtFecha.Name = "txtFecha"
+        Me.txtFecha.Size = New System.Drawing.Size(133, 20)
+        Me.txtFecha.TabIndex = 11
         '
         'btnConfirmar
         '
@@ -270,7 +270,7 @@ Partial Class Form1
         Me.Controls.Add(Me.lblVehiculo)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.btnConfirmar)
-        Me.Controls.Add(Me.txtFechaHora)
+        Me.Controls.Add(Me.txtFecha)
         Me.Controls.Add(Me.txtTeleContacto)
         Me.Controls.Add(Me.txtClienteNombre)
         Me.Controls.Add(Me.Label5)
@@ -298,7 +298,7 @@ Partial Class Form1
     Friend WithEvents rbtVenta As RadioButton
     Friend WithEvents txtClienteNombre As TextBox
     Friend WithEvents txtTeleContacto As TextBox
-    Friend WithEvents txtFechaHora As TextBox
+    Friend WithEvents txtFecha As TextBox
     Friend WithEvents btnConfirmar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox

@@ -76,7 +76,7 @@ Public Class Form1
 
 
     Private Sub fechaYHora()
-        txtFechaHora.Text = DateTime.Now.ToString("dd/MM/yyyy")
+        txtFecha.Text = DateTime.Now.ToString("dd/MM/yyyy")
         txtHora.Text = DateTime.Now.ToShortTimeString()
     End Sub
 
@@ -137,7 +137,8 @@ Public Class Form1
                 miServicio.consultaID = consultaSeleccionada
                 miServicio.elementoID = elementoSeleccionado
                 miServicio.persona = txtClienteNombre.Text
-                miServicio.fecha = txtFechaHora.Text
+                miServicio.fecha = txtFecha.Text
+                miServicio.hora = txtHora.Text
                 miServicio.telefono = txtTeleContacto.Text
 
 
