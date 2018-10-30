@@ -30,4 +30,17 @@
         End If
 
     End Sub
+
+    Dim cadena(5) As String
+    Private Sub convertirCadenaEnServicio(ByVal linea As String)
+        Dim miServicio As Servicio
+
+        cadena = Split(linea, ",")
+        miServicio.consultaID = cadena(0)
+        miServicio.elementoID = cadena(1)
+        miServicio.persona = cadena(2)
+        miServicio.fecha = cadena(3)
+        miServicio.hora = cadena(4)
+        miServicio.telefono = cadena(5)
+    End Sub
 End Class
