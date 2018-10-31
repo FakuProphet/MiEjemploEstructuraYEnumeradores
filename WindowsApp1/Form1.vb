@@ -191,6 +191,7 @@ Public Class Form1
         instancia.ShowDialog()
     End Sub
 
+    'SOLO GUARDA LO Q CONTENGA EL VECTOR EN MEMORIA
     Private Sub btnListado_Click(sender As Object, e As EventArgs) Handles btnListado.Click
         ListBox1.Items.Clear()
 

@@ -1,6 +1,10 @@
-﻿Public Class Form2
+﻿Imports System.IO
+
+Public Class Form2
 
     Public miNuevoVector(1) As Integer
+    Private vServicios(20) As Servicio
+    Private _ruta As String = "C:\Users\Prophet\Desktop\clon ejercicio visual studio\MiEjemploEstructuraYEnumeradores\WindowsApp1\bin\Debug\Rodado.txt"
 
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -16,6 +20,13 @@
         cboConsultas.SelectedIndex = 1
     End Sub
 
+    Private Sub cargarVector(ByVal servicio As Servicio, ByVal posicion As Integer)
+        For Each item As Servicio In vServicios
+            vServicios(posicion) = servicio
+        Next
+    End Sub
+
+    'MUESTRA POR MESSAGE BOX EL RESULTADO DEL CONTEO, DEL CONTENIDO DEL ARREGLO EN MEMORIA
     Private Sub btnMostrar_Click(sender As Object, e As EventArgs) Handles btnMostrar.Click
 
         Dim seleccion As Consulta = cboConsultas.SelectedItem
@@ -30,7 +41,7 @@
         End If
 
     End Sub
-
+    Dim contador As Integer
     Dim cadena(5) As String
     Private Sub convertirCadenaEnServicio(ByVal linea As String)
         Dim miServicio As Servicio
@@ -42,5 +53,37 @@
         miServicio.fecha = cadena(3)
         miServicio.hora = cadena(4)
         miServicio.telefono = cadena(5)
+        contador = contador + 1
+        cargarVector(miServicio, contador)
+
+    End Sub
+
+    Private Sub btnCargar_Click(sender As Object, e As EventArgs) Handles btnCargar.Click
+        Try
+
+            Dim lector As New StreamReader(_ruta)
+
+            Dim Archivo As IO.StreamReader
+
+            Archivo = IO.File.OpenText(_ruta)
+            Do Until Archivo.EndOfStream
+                TextBox1.Text = Archivo.ReadLine()
+                Dim linea As String = TextBox1.Text
+                convertirCadenaEnServicio(linea)
+                MessageBox.Show("Leer otra Linea")
+            Loop
+            Archivo.Close()
+
+            ListBox1.Items.Clear()
+
+            For Each item As Servicio In vServicios
+                If item.persona IsNot Nothing Then
+                    ListBox1.Items.Add(item.persona.ToUpper + " " + item.fecha + " " + item.hora)
+                End If
+            Next
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " + ex.ToString)
+        End Try
     End Sub
 End Class
