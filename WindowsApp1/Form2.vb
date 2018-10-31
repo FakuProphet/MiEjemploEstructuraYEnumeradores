@@ -76,7 +76,8 @@ Public Class Form2
                 TextBox1.Text = Archivo.ReadLine()
                 Dim linea As String = TextBox1.Text
                 convertirCadenaEnServicio(linea)
-                MessageBox.Show("Leer otra Linea")
+                'MessageBox.Show("Leer otra Linea")
+                'En pantalla se muestra un msgBox por cada vuelta o linea leida
             Loop
             Archivo.Close()
 
