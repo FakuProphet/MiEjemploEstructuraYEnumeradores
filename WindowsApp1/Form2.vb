@@ -26,14 +26,25 @@ Public Class Form2
         Next
     End Sub
 
-    'MUESTRA POR MESSAGE BOX EL RESULTADO DEL CONTEO, DEL CONTENIDO DEL ARREGLO EN MEMORIA
+
     Private Sub btnMostrar_Click(sender As Object, e As EventArgs) Handles btnMostrar.Click
 
         Dim seleccion As Consulta = cboConsultas.SelectedItem
 
-
+        'Filtrar por seleccion del comboBox
         If seleccion = Consulta.compra Then
-            MessageBox.Show("la cantidad de COMPRAS realizadas es " + miNuevoVector(0).ToString)
+            'MUESTRA POR MESSAGE BOX EL RESULTADO DEL CONTEO, DEL CONTENIDO DEL ARREGLO EN MEMORIA
+            'MessageBox.Show("la cantidad de COMPRAS realizadas es " + miNuevoVector(0).ToString)
+            ListBox1.Items.Clear()
+            For Each item As Servicio In vServicios
+                If item.ToString IsNot Nothing Then
+
+                    If item.consultaID = 2 Then 'ID DE COMPRAS
+                        ListBox1.Items.Add(item.consultaID.ToString + " " + item.persona.ToUpper + " " + item.fecha + " " + item.hora)
+                    End If
+
+                End If
+            Next
         End If
 
         If seleccion = Consulta.venta Then
@@ -85,7 +96,7 @@ Public Class Form2
 
             For Each item As Servicio In vServicios
                 If item.persona IsNot Nothing Then
-                    ListBox1.Items.Add(item.persona.ToUpper + " " + item.fecha + " " + item.hora)
+                    ListBox1.Items.Add(item.consultaID.ToString + " " + item.persona.ToUpper + " " + item.fecha + " " + item.hora)
                 End If
             Next
 

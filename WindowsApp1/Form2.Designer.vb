@@ -43,7 +43,7 @@ Partial Class Form2
         Me.btnMostrar.Name = "btnMostrar"
         Me.btnMostrar.Size = New System.Drawing.Size(122, 23)
         Me.btnMostrar.TabIndex = 1
-        Me.btnMostrar.Text = "&Mostrar Cantidad"
+        Me.btnMostrar.Text = "&Mostrar "
         Me.btnMostrar.UseVisualStyleBackColor = True
         '
         'btnCargar
