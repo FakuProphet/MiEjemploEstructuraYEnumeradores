@@ -41,11 +41,17 @@ Public Class Form2
         End If
 
     End Sub
+
+
     Dim contador As Integer
     Dim cadena(5) As String
     Private Sub convertirCadenaEnServicio(ByVal linea As String)
         Dim miServicio As Servicio
 
+        'Como indica el nombre del metodo se convierte la cadena o linea
+        'ingresada por parametro, a un objeto tipo servicio
+        'con un split se divide cada elemento de la cadena obtenida del txt
+        'para completar cada miembro de la estructura
         cadena = Split(linea, ",")
         miServicio.consultaID = cadena(0)
         miServicio.elementoID = cadena(1)
