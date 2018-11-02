@@ -1,11 +1,17 @@
 ﻿Imports System.IO
 
+
+
+
+
 Public Class Form2
 
+
+    Dim miCon As New Conexion
     Public miNuevoVector(1) As Integer
     Private vServicios(20) As Servicio
     Private _ruta As String = "C:\Users\Prophet\Desktop\clon ejercicio visual studio\MiEjemploEstructuraYEnumeradores\WindowsApp1\bin\Debug\Rodado.txt"
-
+    'Conexion miConexion As Conexion
 
     Private Sub Form2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargarCombo()
@@ -47,6 +53,7 @@ Public Class Form2
             Next
         End If
 
+		'falta filtrar por las ventas
         If seleccion = Consulta.venta Then
             MessageBox.Show("la cantidad de VENTAS realizadas es " + miNuevoVector(1).ToString)
         End If
@@ -77,6 +84,14 @@ Public Class Form2
 
     Private Sub btnCargar_Click(sender As Object, e As EventArgs) Handles btnCargar.Click
         Try
+
+
+
+            miCon.abrirConexion()
+            'hago algo
+            miCon.cerrarConexion()
+
+
 
             Dim lector As New StreamReader(_ruta)
 
